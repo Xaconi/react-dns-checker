@@ -4,7 +4,7 @@
 [context.production]
   command = "make production"
   [context.production.environment]
-    REACT_APP_URL_NETLIFY_FUNCTIONS = "https://gifted-beaver-1e51ff.netlify.app/.netlify/functions/""
+    REACT_APP_URL_NETLIFY_FUNCTIONS = "https://gifted-beaver-1e51ff.netlify.app/.netlify/functions/"
 
 [context.deploy-preview.environment]
-  REACT_APP_URL_NETLIFY_FUNCTIONS = "https://gifted-beaver-1e51ff.netlify.app/.netlify/functions/""
+  REACT_APP_URL_NETLIFY_FUNCTIONS = "https://gifted-beaver-1e51ff.netlify.app/.netlify/functions/"
