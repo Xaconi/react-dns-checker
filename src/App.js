@@ -17,8 +17,7 @@ const App = () => {
 	const getDomainInfo = async () => {
 		console.log(state.domain);
 
-		// @TODO - POST to Netlify Function to get DNS domain info...
-		const result = await fetch(`http://localhost:58668/dns-check?domain=${state.domain}`);
+		const result = await fetch(`${process.env.URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
 		const response = await result.json();
 
 		setState({
