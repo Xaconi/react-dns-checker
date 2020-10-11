@@ -15,9 +15,7 @@ const App = () => {
 	}
 
 	const getDomainInfo = async () => {
-		console.log(state.domain);
-
-		const result = await fetch(`${process.env.URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
+		const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
 		const response = await result.json();
 
 		setState({
