@@ -3,18 +3,27 @@ import React, { useState } from "react";
 const App = () => {
 
 	const [state, setState] = useState({
-		domain : ''
+		domain: '',
+		domainInfo: ''
 	});
 
 	function handleChange(event) { 
-		setState({domain: event.target.value});
+		setState({
+			domain: event.target.value,
+			domainInfo: state.domainInfo
+		});
 	}
 
-	const getDomainInfo = () => {
+	const getDomainInfo = async () => {
 		console.log(state.domain);
 
 		// @TODO - POST to Netlify Function to get DNS domain info...
-		// fetch('http://localhost:56233/dns-check')
+		const result = await fetch(`http://localhost:58668/dns-check?domain=${state.domain}`);
+		const response = await result.json();
+
+		setState({
+			domainInfo : `The domain address is ${response.address} and the family is ${response.family}`
+		})
 	}
 
 	return (
@@ -25,11 +34,14 @@ const App = () => {
 				type="text" 
 				placeholder="Put the domain here..."
 				onChange={handleChange}
-				value={state.domain}
 			>
 			</input>
 
 			<button onClick={getDomainInfo}>Get domain info!</button>
+
+			{state.domainInfo != '' ? 
+			<p>{state.domainInfo}</p>
+			: <></>}
 		</div>
 	);
 };
