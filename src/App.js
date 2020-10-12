@@ -19,6 +19,7 @@ const App = () => {
 		const response = await result.json();
 
 		setState({
+			domain: state.domain,
 			domainInfo : `The domain address is ${response.address} and the family is ${response.family}`
 		})
 	}
