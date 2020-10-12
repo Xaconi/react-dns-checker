@@ -4,10 +4,10 @@
   "description": "Basic DNS checker based on react.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --open --mode development --env.ENVIRONMENT=development",
     "dev-netlify": "netlify dev",
     "test": "test",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --env.ENVIRONMENT=production"
   },
   "repository": {
     "type": "git",
