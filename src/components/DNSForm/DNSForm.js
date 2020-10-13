@@ -13,7 +13,9 @@ const DNSForm = () => {
 		});
 	}
 
-	const getDomainInfo = async () => {
+	const getDomainInfo = async (event) => {
+		event.preventDefault();
+
 		const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
 		const response = await result.json();
 
@@ -24,7 +26,7 @@ const DNSForm = () => {
 	}
 
 	return (
-		<form>
+		<form onSubmit={getDomainInfo}>
 			<input 
 				type="text" 
 				placeholder="Put the domain here..."
@@ -32,7 +34,7 @@ const DNSForm = () => {
 			>
 			</input>
 
-			<button onClick={getDomainInfo}>Get domain info!</button>
+			<button>Get domain info!</button>
 
 			{state.domainInfo != '' ? 
 			<p>{state.domainInfo}</p>
