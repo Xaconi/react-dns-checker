@@ -16,8 +16,12 @@ const DNSForm = () => {
 	const getDomainInfo = async (event) => {
 		event.preventDefault();
 
-		// const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
-		const result = await fetch(`http://localhost:65028/dns-check?domain=${state.domain}`);
+		if(process.env.ENVIRONMENT == 'development') {
+			const result = await fetch(`http://localhost:65028/dns-check?domain=${state.domain}`);
+		} else if (process.env.ENVIRONMENT == 'production') {
+			const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
+		}
+		
 		const response = await result.json();
 
 		setState({
