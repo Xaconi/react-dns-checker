@@ -23,25 +23,29 @@ module.exports = (env) => {
 			filename: "bundle.js",
 		},
 		resolve: {
-			extensions: [".js", ".jsx"],
+			extensions: [".js", ".jsx", ".css"],
 		},
 		module: {
 			rules: [
-			{
-				test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				use: {
-				loader: "babel-loader",
-				},
-			},
-			{
-				test: /\.html$/,
-				use: [
 				{
-					loader: "html-loader",
+					test: /\.(js|jsx)$/,
+					exclude: /node_modules/,
+					use: {
+					loader: "babel-loader",
+					},
 				},
-				],
-			},
+				{
+					test: /\.html$/,
+					use: [
+					{
+						loader: "html-loader",
+					},
+					],
+				},
+				{ 
+					test: /\.css$/, 
+					loader: "style-loader!css-loader"
+				}
 			],
 		},
 		plugins: [
