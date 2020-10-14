@@ -6,14 +6,38 @@ const Content = () => {
 
 	const [state, setState] = useState({
 		domain: '',
-		recordsA: ''
+		recordsA: '',
+		recordsAAAA: '',
+		recordsMX: '',
+		recordsCNAME: '',
+		recordsNS: '',
+		recordsPTR: '',
+		recordsSOA: '',
+		recordsTXT: ''
 	});
 
-	const updateDomainInfo = ({domain, recordsA}) => {
-		console.log(recordsA);
+	const updateDomainInfo = ({
+		domain, 
+		recordsA,
+		recordsAAAA,
+		recordsMX,
+		recordsCNAME,
+		recordsNS,
+		recordsPTR,
+		recordsSOA,
+		recordsTXT
+	}) => {
+		console.log(recordsTXT);
 		setState({
 			domain,
-			recordsA
+			recordsA,
+			recordsAAAA,
+			recordsMX,
+			recordsCNAME,
+			recordsNS,
+			recordsPTR,
+			recordsSOA,
+			recordsTXT
 		});
 	}
 
@@ -25,6 +49,13 @@ const Content = () => {
 			{state.domain != '' ? 
 				<Results
 					recordsA={state.recordsA}
+					recordsAAAA={state.recordsAAAA}
+					recordsMX={state.recordsMX}
+					recordsCNAME={state.recordsCNAME}
+					recordsNS={state.recordsNS}
+					recordsPTR={state.recordsPTR}
+					recordsSOA={state.recordsSOA}
+					recordsTXT={state.recordsTXT}
 				>
 					These are the results for {state.domain}
 				</Results>
