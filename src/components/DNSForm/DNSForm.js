@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DNSForm = () => { 
+const DNSForm = (props) => { 
 	const [state, setState] = useState({
 		domain: '',
 		domainInfo: ''
@@ -16,9 +16,22 @@ const DNSForm = () => {
 	const getDomainInfo = async (event) => {
 		event.preventDefault();
 
-		const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
+		// const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
+		const result = await fetch(`http://localhost:50209/dns-check?domain=${state.domain}`);
 		
 		const response = await result.json();
+
+		props.handleUpdate({
+			domain : state.domain,
+			recordsA : response.recordsA,
+			recordsAAAA : response.recordsAAAA,
+			recordsMX : response.recordsMX,
+			recordsCNAME : response.recordsCNAME,
+			recordsNS : response.recordsNS,
+			recordsPTR : response.recordsPTR,
+			recordsSOA : response.recordsSOA,
+			recordsTXT : response.recordsTXT
+		});
 
 		setState({
 			domain: state.domain,
