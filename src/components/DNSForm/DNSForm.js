@@ -16,8 +16,8 @@ const DNSForm = (props) => {
 	const getDomainInfo = async (event) => {
 		event.preventDefault();
 
-		// const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
-		const result = await fetch(`http://localhost:50209/dns-check?domain=${state.domain}`);
+		const result = await fetch(`${process.env.REACT_APP_URL_NETLIFY_FUNCTIONS}dns-check?domain=${state.domain}`);
+		// const result = await fetch(`http://localhost:50209/dns-check?domain=${state.domain}`);
 		
 		const response = await result.json();
 
