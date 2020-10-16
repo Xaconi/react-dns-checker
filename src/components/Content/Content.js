@@ -42,7 +42,26 @@ const Content = () => {
 	}
 
 	return (
-		<section>
+		<section className="wrapper">
+			<style jsx>{`
+				.wrapper {
+					max-width: 800px;
+					margin: 0 auto;
+					text-align: center;
+				}
+
+				p {
+					font-family: 'Merriweather';
+					font-size: 20px;
+					color: white;
+					text-align: center;
+				}
+			`}</style>
+			<p>
+				Check your domain DNS records live!
+				<br></br>
+				Copy and share your results to have a backup in case of disaster! 😱
+			</p>
 			<DNSForm
 				handleUpdate={updateDomainInfo}>
 			</DNSForm>
@@ -62,7 +81,6 @@ const Content = () => {
 			: 
 				<></>
 			}
-			
 		</section>
 	);
 }

@@ -40,20 +40,46 @@ const DNSForm = (props) => {
 	}
 
 	return (
-		<form onSubmit={getDomainInfo}>
-			<input 
-				type="text" 
-				placeholder="Put the domain here..."
-				onChange={handleChange}
-			>
-			</input>
+		<>
+			<style jsx>{`
+				form {
+					margin: 50px 0;
+				}
 
-			<button>Get domain info!</button>
+				input, button {			
+					padding: 10px 5px;
+					font-size: 18px;
+					border: none;
+					outline: none;
+				}
 
-			{state.domainInfo != '' ? 
-			<p>{state.domainInfo}</p>
-			: <></>}
-		</form>
+				input {
+					border-bottom-left-radius: 10px;
+					border-top-left-radius: 10px;
+					width: 300px;
+				}
+
+				button {
+					border-bottom-right-radius: 10px;
+					border-top-right-radius: 10px;
+					cursor: pointer;
+				}
+			`}</style>
+			<form onSubmit={getDomainInfo}>
+				<input 
+					type="text" 
+					placeholder="Put the domain here..."
+					onChange={handleChange}
+				>
+				</input>
+
+				<button>Get domain info!</button>
+
+				{state.domainInfo != '' ? 
+				<p>{state.domainInfo}</p>
+				: <></>}
+			</form>
+		</>
 	);
 }
 
