@@ -4,6 +4,9 @@ html, body {
 
 body {
 	background: linear-gradient(#EB5400, #F2A900);
+	margin: 0;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @font-face {

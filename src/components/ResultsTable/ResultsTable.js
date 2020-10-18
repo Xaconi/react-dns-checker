@@ -8,14 +8,24 @@ const ResultsTable = (props) => {
 				h2 {
 					font-family: 'Merriweather';
 					margin: 20px 0 0 0;
-					background-color: #bfbfbf;
-					border: 1px solid grey;
+					background-color: #ffca61;
+    				border: 2px solid #ec5c00;
 					padding: 5px 0;
 				}
 
 				.returnBlock {
 					padding: 10px;
     				background-color: #dedede;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					justify-content: space-around;
+					background-color: #ff8f47;
+    				border: 2px solid #ec5c00;
+				}
+
+				span {
+					font-family: 'Merriweather';
 				}
 			`}</style>
 			{typeof props.records != 'undefined' && props.records.length > 0

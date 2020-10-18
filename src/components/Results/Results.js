@@ -13,14 +13,14 @@ const Results = (props) => {
 				records={props.recordsA}
 				type="A"
 			>
-				'A' records
+				<strong>A</strong> records
 			</ResultsTable>
 
 			<ResultsTable
 				records={props.recordsAAAA}
 				type="AAAA"
 			>
-				'AAAA' records
+				<strong>AAAA</strong> records
 			</ResultsTable>
 			
 
@@ -28,42 +28,42 @@ const Results = (props) => {
 				records={props.recordsMX}
 				type="MX"
 			>
-				'MX' records
+				<strong>MX</strong> records
 			</ResultsTable>
 
 			<ResultsTable
 				records={props.recordsCNAME}
 				type="CNAME"
 			>
-				'CNAME' records
+				<strong>CNAME</strong> records
 			</ResultsTable>
 
 			<ResultsTable
 				records={props.recordsNS}
 				type="NS"
 			>
-				'NS' records
+				<strong>NS</strong> records
 			</ResultsTable>
 
 			<ResultsTable
 				records={props.recordsPTR}
 				type="PTR"
 			>
-				'PTR' records
+				<strong>PTR</strong> records
 			</ResultsTable>
 
 			<ResultsTable
 				records={props.recordsSOA}
 				type="SOA"
 			>
-				'SOA' records
+				<strong>SOA</strong> records
 			</ResultsTable>
 
 			<ResultsTable
 				records={props.recordsTXT}
 				type="TXT"
 			>
-				'TXT' records
+				<strong>TXT</strong> records
 			</ResultsTable>
 		</>
 	);
