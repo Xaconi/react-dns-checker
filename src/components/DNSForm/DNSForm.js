@@ -68,16 +68,12 @@ const DNSForm = (props) => {
 			<form onSubmit={getDomainInfo}>
 				<input 
 					type="text" 
-					placeholder="Put the domain here..."
+					placeholder="Write the domain here..."
 					onChange={handleChange}
 				>
 				</input>
 
 				<button>Get domain info!</button>
-
-				{state.domainInfo != '' ? 
-				<p>{state.domainInfo}</p>
-				: <></>}
 			</form>
 		</>
 	);

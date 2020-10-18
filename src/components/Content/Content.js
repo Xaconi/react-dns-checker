@@ -76,7 +76,7 @@ const Content = () => {
 					recordsSOA={state.recordsSOA}
 					recordsTXT={state.recordsTXT}
 				>
-					These are the results for {state.domain}
+					<p>These are the results for <strong>{state.domain}</strong></p>
 				</Results>
 			: 
 				<></>
