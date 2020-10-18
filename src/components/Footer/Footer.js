@@ -8,6 +8,7 @@ const Footer = () => {
 					text-align: center;
 					font-family: 'Merriweather';
 					color: white;
+					margin: 40px 0;
 				}
 			`}</style>
 			<footer>
