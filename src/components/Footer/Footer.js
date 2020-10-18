@@ -12,7 +12,7 @@ const Footer = () => {
 				}
 			`}</style>
 			<footer>
-				Made with 💖 by <a href="https://github.com/Xaconi">@Xaconi</a>
+				Made with 💖 by <a href="https://github.com/Xaconi" target="_blank">@Xaconi</a>
 			</footer>
 		</>
 	);
